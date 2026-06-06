@@ -20,7 +20,8 @@ images), high price point with price-insensitive buyers, fully passive delivery.
 | `driver-tracker/` | Rideshare & Delivery Tracker | Schedule C | Uber/DoorDash drivers | "rideshare driver spreadsheet" | $19 → $29 |
 | `foodtruck-tracker/` | Food Truck & Vendor Tracker | Schedule C | Food trucks / vendors | "food truck spreadsheet" | $19 → $29 |
 
-**Bundles** (see `STOREFRONT.md`): Rental Investor $39 · Self-Employed $39 · Everything $69.
+**Bundles** — assembled & ready in `bundles/` (each = a ZIP + hero + included image + copy):
+Rental Investor $39 · Self-Employed $39 · Everything $69. Build with `python3 build_bundles.py`.
 
 **To launch (beginner-friendly):** `HOW-TO-LIST.md` is a click-by-click walkthrough; `LAUNCH-CHECKLIST.md`
 is the one-page printable version.

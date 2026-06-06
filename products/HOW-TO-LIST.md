@@ -127,14 +127,16 @@ Pick a **store name** first (ideas in `STOREFRONT.md`) and use it on both.
 
 # PART C — After your products are live
 
-### C1. Create the bundles (more sales, same files)
-Make 3 more listings (on Gumroad and/or Etsy) that include **multiple products' files**:
-- **Rental Investor Bundle — $39** (Short-Term Rental + Rental Property)
-- **Self-Employed Bundle — $39** (Online Seller + Freelancer)
-- **Everything Bundle — $69** (all ten)
+### C1. Create the bundles (more sales — and they're already assembled for you ✅)
+The 3 bundles are pre-built in `bundles/`. Each is a finished listing:
+- **Rental Investor Bundle — $39** · `bundles/rental-investor/`
+- **Self-Employed Bundle — $39** · `bundles/self-employed/`
+- **Everything Bundle — $69** · `bundles/everything/`  ← make this your featured listing
 
-Copy/pricing is in `STOREFRONT.md`. For images, reuse the two products' hero images side by side
-(or just use one hero each).
+For each, you just: create a new product → upload the **`*-bundle.zip`** as the single digital
+file → upload **`hero.png`** then **`included.png`** as the photos → paste the title/tags/description
+from that folder's **`listing-copy.md`** → set the price → publish. The ZIP already contains every
+included tracker + setup guide + a Read-Me, so one upload covers the whole bundle.
 
 ### C2. The review email (Gumroad)
 A few days after a sale, send **Email 2** from `QUICKSTART-EMAIL.md` (plain review request — no incentives).
