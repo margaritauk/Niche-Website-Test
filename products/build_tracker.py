@@ -415,6 +415,245 @@ VARIANTS = {
             (date(2026,5,20), "(General / business)", "Expense", "Advertising & marketing",          "Instagram ads",                 90.00, "Meta"),
         ],
     },
+    "cleaning": {
+        "dir": "cleaning-tracker",
+        "output": "Cleaning-Business-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C", "entity": "Client / job", "entity_lower": "client", "entity_plural_lower": "clients",
+        "summary_sheet": "Schedule C Summary", "summary_part": "",
+        "income_line_label": "Total income (Line 1)", "expense_total_label": "Total expenses (Line 28)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)", "setup_col3": "Type (client / business)",
+        "setup_col4": "Start date (optional)", "setup_col4_currency": False,
+        "title": "  Cleaning Business  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  House cleaners & cleaning companies  ·  per-client profit + IRS Schedule C  ·  works in Excel & Google Sheets",
+        "income": ["Cleaning income", "Tips received", "Other income"],
+        "expenses": [
+            ("Advertising & marketing",       "8  Advertising"),
+            ("Car & truck / mileage",         "9  Car & truck"),
+            ("Booking app & payment fees",    "10 Commissions & fees"),
+            ("Contract labor / helpers",      "11 Contract labor"),
+            ("Equipment (vacuums, machines)", "13 Depreciation"),
+            ("Insurance & bonding",           "15 Insurance"),
+            ("Legal & professional",          "17 Legal & professional"),
+            ("Office expense",                "18 Office expense"),
+            ("Rent or lease",                 "20 Rent or lease"),
+            ("Repairs & maintenance",         "21 Repairs & maintenance"),
+            ("Cleaning supplies & products",  "22 Supplies"),
+            ("Dues & licenses",               "23 Taxes & licenses"),
+            ("Travel & meals",                "24 Travel & meals"),
+            ("Software & subscriptions",      "27 Other (software)"),
+            ("Uniforms & laundry",            "27 Other (uniforms)"),
+            ("Utilities (phone/internet)",    "25 Utilities"),
+        ],
+        "placeholders": ["(General / business)", "Client: Anderson", "Client: Office Park", "", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log each cleaning payment as 'Cleaning income' and tag it to that client. Tips are "
+                      "taxable income too — log them under 'Tips received'."),
+        "tip_extra": ("Track every business mile between jobs — it's a major deduction. Tag client-specific "
+                      "costs to the client; supplies, insurance and marketing go under '(General / business)'."),
+        "noun": "cleaning business",
+        "audience_line": "If you run a house-cleaning or janitorial business,",
+        "log_right": [
+            "<b>Log each cleaning payment as income</b> (<i>Cleaning income</i>) and tag it to that client "
+            "on the Setup tab — the dashboard then shows profit per client.",
+            "<b>Tips are taxable income.</b> Log them under <i>Tips received</i> so your books match what "
+            "actually hits your account.",
+            "<b>Track every business mile</b> between jobs — mileage is one of a cleaner's biggest "
+            "deductions. Log car costs under <i>Car & truck / mileage</i> or keep a mileage log and apply "
+            "the IRS rate (ask your tax pro).",
+            "<b>Tag client-specific costs to the client</b>; put shared costs — supplies, insurance, "
+            "marketing, software — under <b>(General / business)</b>.",
+        ],
+        "samples": [
+            (date(2026,5,2),  "Client: Anderson",     "Income",  "Cleaning income",              "Weekly clean",        120.00, "Anderson"),
+            (date(2026,5,2),  "Client: Anderson",     "Income",  "Tips received",                "Tip",                  20.00, "Anderson"),
+            (date(2026,5,4),  "(General / business)", "Expense", "Cleaning supplies & products", "Restock supplies",     65.00, "Supply Co"),
+            (date(2026,5,9),  "Client: Office Park",  "Income",  "Cleaning income",              "Office contract — May",800.00, "Office Park"),
+            (date(2026,5,10), "(General / business)", "Expense", "Car & truck / mileage",        "Gas / mileage",        70.00, "Gas"),
+            (date(2026,5,15), "(General / business)", "Expense", "Insurance & bonding",          "Liability + bond",     95.00, "Insurer"),
+            (date(2026,5,18), "Client: Anderson",     "Income",  "Cleaning income",              "Deep clean add-on",   180.00, "Anderson"),
+            (date(2026,5,22), "(General / business)", "Expense", "Software & subscriptions",     "Scheduling app",       29.00, "SaaS"),
+        ],
+    },
+    "beauty": {
+        "dir": "beauty-tracker",
+        "output": "Hair-Stylist-Beauty-Pro-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C", "entity": "Location / chair", "entity_lower": "location", "entity_plural_lower": "locations",
+        "summary_sheet": "Schedule C Summary", "summary_part": "",
+        "income_line_label": "Total income (Line 1)", "expense_total_label": "Total expenses (incl. COGS)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)", "setup_col3": "Type (location / overhead)",
+        "setup_col4": "Start date (optional)", "setup_col4_currency": False,
+        "title": "  Hair Stylist & Beauty Pro  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  Stylists · barbers · estheticians · nail techs  ·  IRS Schedule C ready  ·  works in Excel & Google Sheets",
+        "income": ["Service income", "Retail product sales", "Tips received"],
+        "expenses": [
+            ("Advertising & marketing",          "8  Advertising"),
+            ("Car & truck",                      "9  Car & truck"),
+            ("Booking app & payment fees",       "10 Commissions & fees"),
+            ("Contract labor / assistant",       "11 Contract labor"),
+            ("Tools & equipment",                "13 Depreciation"),
+            ("Insurance (liability)",            "15 Insurance"),
+            ("Legal & professional",             "17 Legal & professional"),
+            ("Booth rent / chair rent",          "20 Rent or lease"),
+            ("Repairs & maintenance",            "21 Repairs & maintenance"),
+            ("Back-bar supplies (color, etc.)",  "22 Supplies"),
+            ("Retail products for resale (COGS)","4  Cost of goods sold"),
+            ("Dues & licenses (cosmetology)",    "23 Taxes & licenses"),
+            ("Travel & meals",                   "24 Travel & meals"),
+            ("Software & booking subscriptions", "27 Other (software)"),
+            ("Education & classes",              "27 Other (education)"),
+            ("Utilities (phone/internet)",       "25 Utilities"),
+        ],
+        "placeholders": ["(General / overhead)", "Salon (my chair)", "Mobile / events", "", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log service income and retail sales separately; tips are taxable too (log under "
+                      "'Tips received'). Booth or chair rent goes under 'Booth rent / chair rent'."),
+        "tip_extra": ("Back-bar supplies you use in services are 'Supplies'; retail products you resell are "
+                      "'Retail products for resale (COGS)'. Your cosmetology license & dues go under "
+                      "'Dues & licenses'."),
+        "noun": "hair & beauty business",
+        "audience_line": "If you're a hairstylist, barber, esthetician, or nail tech,",
+        "log_right": [
+            "<b>Log service income and retail product sales separately.</b> And remember <b>tips are "
+            "taxable</b> — log them under <i>Tips received</i> so your books are accurate.",
+            "<b>Booth / chair rent is one of your biggest costs</b> — log it under <i>Booth rent / chair "
+            "rent</i> every time you pay it.",
+            "<b>Back-bar vs. retail:</b> products you <i>use</i> in a service are <i>Back-bar supplies</i>; "
+            "products you <i>resell</i> to clients are <i>Retail products for resale (COGS)</i>.",
+            "<b>Keep license, dues and class costs.</b> Cosmetology license renewals and dues go under "
+            "<i>Dues & licenses</i>; continuing-education classes under <i>Education & classes</i>.",
+        ],
+        "samples": [
+            (date(2026,5,3),  "Salon (my chair)",     "Income",  "Service income",                   "Cut & color",        180.00, "Client A"),
+            (date(2026,5,3),  "Salon (my chair)",     "Income",  "Tips received",                    "Tip",                 35.00, "Client A"),
+            (date(2026,5,5),  "(General / overhead)", "Expense", "Booth rent / chair rent",          "Weekly booth rent",  200.00, "Salon"),
+            (date(2026,5,8),  "(General / overhead)", "Expense", "Back-bar supplies (color, etc.)",  "Color restock",      120.00, "Supplier"),
+            (date(2026,5,10), "Salon (my chair)",     "Income",  "Retail product sales",             "Shampoo + styling",   60.00, "Client B"),
+            (date(2026,5,10), "(General / overhead)", "Expense", "Retail products for resale (COGS)","Retail stock cost",   32.00, "Distributor"),
+            (date(2026,5,15), "(General / overhead)", "Expense", "Software & booking subscriptions", "Booking app",         25.00, "SaaS"),
+            (date(2026,5,20), "Salon (my chair)",     "Income",  "Service income",                   "Highlights",         220.00, "Client C"),
+        ],
+    },
+    "driver": {
+        "dir": "driver-tracker",
+        "output": "Rideshare-Delivery-Driver-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C", "entity": "Platform", "entity_lower": "platform", "entity_plural_lower": "platforms",
+        "summary_sheet": "Schedule C Summary", "summary_part": "",
+        "income_line_label": "Total income (Line 1)", "expense_total_label": "Total expenses (Line 28)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Account / region (optional)", "setup_col3": "App type",
+        "setup_col4": "Notes (optional)", "setup_col4_currency": False,
+        "title": "  Rideshare & Delivery Driver  —  Mileage, Income & Tax Tracker",
+        "subtitle": "  Uber · Lyft · DoorDash · Instacart  ·  mileage + IRS Schedule C  ·  works in Excel & Google Sheets",
+        "income": ["Trip / delivery earnings", "Tips received", "Bonuses & promotions"],
+        "expenses": [
+            ("Mileage deduction (miles × IRS rate)", "9  Car & truck"),
+            ("Tolls & parking",                      "27 Other (tolls)"),
+            ("Platform & payment fees",              "10 Commissions & fees"),
+            ("Phone & plan (business %)",            "25 Utilities"),
+            ("Hot bags & equipment",                 "13 Depreciation"),
+            ("Supplies (water, chargers, gum)",      "22 Supplies"),
+            ("Car washes & detailing",               "27 Other (car wash)"),
+            ("Insurance (rideshare add-on)",         "15 Insurance"),
+            ("Software & subscriptions",             "27 Other (software)"),
+            ("Bank & processing fees",               "27 Other (fees)"),
+            ("Parking permits & licenses",           "23 Taxes & licenses"),
+            ("Legal & professional",                 "17 Legal & professional"),
+            ("Office expense",                       "18 Office expense"),
+        ],
+        "placeholders": ["(All platforms / general)", "Uber", "DoorDash", "Lyft", "Instacart"],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log earnings under the platform you drove for (Uber, DoorDash, etc.) so you can see "
+                      "which app actually pays best. Tips and bonuses are income too."),
+        "tip_extra": ("Most drivers use the standard mileage method: track your business miles in a log, "
+                      "multiply by the IRS rate, and enter that dollar amount under 'Mileage deduction'. "
+                      "If you instead use actual car costs, don't also claim mileage — ask your tax pro."),
+        "noun": "rideshare & delivery business",
+        "audience_line": "If you drive for Uber, Lyft, DoorDash, or Instacart,",
+        "log_right": [
+            "<b>Tag each payout to the platform you earned it on</b> (Uber, DoorDash, Lyft…) and put shared "
+            "costs under <b>(All platforms / general)</b>. The dashboard then shows which app pays best.",
+            "<b>Mileage is your biggest deduction.</b> Keep a mileage log (date, miles, purpose). Multiply "
+            "total business miles by the IRS standard rate and enter that dollar amount under "
+            "<i>Mileage deduction (miles × IRS rate)</i>.",
+            "<b>Pick ONE car method.</b> Standard mileage (above) OR actual costs (gas, repairs, "
+            "insurance) — not both. This sheet is built around the standard-mileage method most drivers "
+            "use; ask your tax pro if actual costs would beat it for you.",
+            "<b>Tolls, parking, phone, hot bags and supplies are deductible on top of mileage.</b> Log "
+            "them in their own categories so nothing slips through.",
+        ],
+        "samples": [
+            (date(2026,5,2),  "Uber",                      "Income",  "Trip / delivery earnings",            "Week 1 trips",         540.00, "Uber"),
+            (date(2026,5,2),  "Uber",                      "Income",  "Tips received",                       "Week 1 tips",           85.00, "Uber"),
+            (date(2026,5,5),  "DoorDash",                  "Income",  "Trip / delivery earnings",            "Week 1 deliveries",    410.00, "DoorDash"),
+            (date(2026,5,5),  "DoorDash",                  "Income",  "Tips received",                       "Week 1 tips",          120.00, "DoorDash"),
+            (date(2026,5,9),  "(All platforms / general)", "Expense", "Mileage deduction (miles × IRS rate)","820 business miles",   561.00, "—"),
+            (date(2026,5,12), "(All platforms / general)", "Expense", "Phone & plan (business %)",           "Phone 50% business",    45.00, "Telecom"),
+            (date(2026,5,15), "(All platforms / general)", "Expense", "Tolls & parking",                     "Tolls",                 32.00, "Tollway"),
+            (date(2026,5,20), "Uber",                      "Income",  "Bonuses & promotions",                "Quest bonus",           90.00, "Uber"),
+        ],
+    },
+    "foodtruck": {
+        "dir": "foodtruck-tracker",
+        "output": "Food-Truck-Vendor-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C", "entity": "Event / location", "entity_lower": "event", "entity_plural_lower": "events",
+        "summary_sheet": "Schedule C Summary", "summary_part": "",
+        "income_line_label": "Total income (Line 1)", "expense_total_label": "Total expenses (incl. COGS)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Location (optional)", "setup_col3": "Type (event / business)",
+        "setup_col4": "Date (optional)", "setup_col4_currency": False,
+        "title": "  Food Truck & Vendor  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  Food trucks · trailers · market & event vendors  ·  COGS + IRS Schedule C  ·  works in Excel & Google Sheets",
+        "income": ["Food & drink sales", "Catering / private events", "Other income"],
+        "expenses": [
+            ("Food & ingredients (COGS)",         "4  Cost of goods sold"),
+            ("Paper goods & packaging (COGS)",    "4  Cost of goods sold"),
+            ("Advertising & marketing",           "8  Advertising"),
+            ("Car & truck / fuel",                "9  Car & truck"),
+            ("Commissary & kitchen rent",         "20 Rent or lease"),
+            ("Event & booth fees",                "27 Other (event fees)"),
+            ("Permits & licenses (health)",       "23 Taxes & licenses"),
+            ("Contract labor / staff",            "11 Contract labor"),
+            ("Equipment & smallwares",            "13 Depreciation"),
+            ("Insurance",                         "15 Insurance"),
+            ("Repairs & maintenance",             "21 Repairs & maintenance"),
+            ("Propane & utilities",               "25 Utilities"),
+            ("Supplies (cleaning, misc.)",        "22 Supplies"),
+            ("Software & POS subscriptions",      "27 Other (software)"),
+            ("Payment processing fees",           "10 Commissions & fees"),
+            ("Legal & professional",              "17 Legal & professional"),
+        ],
+        "placeholders": ["(General / business)", "Farmers Market", "Food Festival", "Catering: Office", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log sales per event or location so you can see which spots are worth it. Catering "
+                      "and private events are income too."),
+        "tip_extra": ("Food, drinks and packaging are 'Cost of goods sold'. Commissary/kitchen rent, "
+                      "health permits and event/booth fees are big food-vendor costs — don't forget them."),
+        "noun": "food truck / vendor business",
+        "audience_line": "If you run a food truck, trailer, or market stall,",
+        "log_right": [
+            "<b>Log sales by event or location</b> (farmers market, festival, a catering gig) and tag "
+            "shared costs to <b>(General / business)</b>. The dashboard then shows which spots actually "
+            "make money.",
+            "<b>Food, drinks and packaging are Cost of Goods Sold</b> — log them under the (COGS) "
+            "categories. This is usually a food vendor's biggest expense, so keep it accurate.",
+            "<b>Don't forget the food-vendor-specific costs:</b> commissary / kitchen rent, health permits "
+            "& licenses, and event / booth fees each have their own category.",
+            "<b>Track fuel and truck upkeep</b> under <i>Car & truck / fuel</i> and <i>Repairs & "
+            "maintenance</i>; card-reader fees go under <i>Payment processing fees</i>.",
+        ],
+        "samples": [
+            (date(2026,5,3),  "Farmers Market",       "Income",  "Food & drink sales",             "Saturday market",       980.00, "Square"),
+            (date(2026,5,3),  "(General / business)", "Expense", "Food & ingredients (COGS)",      "Produce + proteins",    340.00, "Rest. Depot"),
+            (date(2026,5,3),  "(General / business)", "Expense", "Paper goods & packaging (COGS)", "Containers + napkins",   85.00, "Supplier"),
+            (date(2026,5,5),  "(General / business)", "Expense", "Commissary & kitchen rent",      "Weekly commissary",     200.00, "Commissary"),
+            (date(2026,5,9),  "Food Festival",        "Income",  "Food & drink sales",             "Festival weekend",     2400.00, "Square"),
+            (date(2026,5,9),  "(General / business)", "Expense", "Event & booth fees",             "Festival vendor fee",   350.00, "Festival"),
+            (date(2026,5,15), "Catering: Office",     "Income",  "Catering / private events",      "Office lunch catering", 600.00, "Client"),
+            (date(2026,5,20), "(General / business)", "Expense", "Propane & utilities",            "Propane refill",         70.00, "Propane Co"),
+        ],
+    },
 }
 
 # ================================================================ BUILDER

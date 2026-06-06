@@ -100,6 +100,18 @@ No pressure at all. Thanks for being a customer!
 **Photographer Tracker** (Schedule C)
 > 2. On the **Setup** tab, add your shoots/clients plus the "(General / business)" bucket. Then on **Transactions**, log session fees, print sales and expenses — tag each to a shoot (or to general business), choose Income/Expense, pick a category. Remember: print sales are income and the lab cost is COGS, and big-ticket gear is usually depreciated rather than expensed all at once.
 
+**Cleaning Business Tracker** (Schedule C)
+> 2. On the **Setup** tab, add your clients plus the "(General / business)" bucket. Then on **Transactions**, log each job and expense — tag it to the client (or to general business), choose Income/Expense, pick a category. Remember: tips are taxable income, and track every business mile between jobs.
+
+**Hair Stylist & Beauty Tracker** (Schedule C)
+> 2. On the **Setup** tab, name your location/chair and the "(General / overhead)" bucket. Then on **Transactions**, log services, retail sales, tips and expenses — choose Income/Expense, pick a category. Remember: tips are taxable, booth rent has its own category, and back-bar supplies differ from retail products you resell (COGS).
+
+**Rideshare & Delivery Tracker** (Schedule C)
+> 2. Your apps are pre-listed on the **Setup** tab. On **Transactions**, log earnings under the platform you drove for, plus tips and bonuses — then your expenses under "(All platforms / general)". For mileage: keep a mile log, multiply by the IRS rate, and enter that dollar amount under "Mileage deduction". Use one car method, not both.
+
+**Food Truck & Vendor Tracker** (Schedule C)
+> 2. On the **Setup** tab, add your events/locations plus the "(General / business)" bucket. Then on **Transactions**, log sales and costs — tag each to an event (or to general business), choose Income/Expense, pick a category. Remember: food, drinks and packaging are Cost of Goods Sold, and don't forget commissary rent, permits and booth fees.
+
 ---
 
 ## SUBJECT-LINE SWAP-INS (per product, for Email 1)
@@ -109,3 +121,7 @@ No pressure at all. Thanks for being a customer!
 - Freelancer: `Your Freelancer Bookkeeping Tracker is ready — start here (5 min)`
 - Realtor: `Your Real Estate Agent Tracker is ready — start here (5 min)`
 - Photographer: `Your Photographer Bookkeeping Tracker is ready — start here (5 min)`
+- Cleaning: `Your Cleaning Business Tracker is ready — start here (5 min)`
+- Beauty: `Your Hair Stylist & Beauty Tracker is ready — start here (5 min)`
+- Driver: `Your Rideshare & Delivery Tracker is ready — start here (5 min)`
+- Food truck: `Your Food Truck & Vendor Tracker is ready — start here (5 min)`

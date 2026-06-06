@@ -55,6 +55,10 @@ specific filing with a qualified professional. Designed in-house with the help o
 | **Freelancer & Self-Employed Tracker** | For freelancers & 1099 contractors — Schedule C, profit by client. |
 | **Real Estate Agent Tracker** | For realtors & brokers — Schedule C, gross commission vs. split, by deal. |
 | **Photographer Tracker** | For photographers — Schedule C, profit by shoot, gear & prints (COGS). |
+| **Cleaning Business Tracker** | For house cleaners — Schedule C, profit by client, tips & supplies. |
+| **Hair Stylist & Beauty Tracker** | For stylists & nail techs — Schedule C, service/retail/tips, booth rent. |
+| **Rideshare & Delivery Tracker** | For Uber/DoorDash drivers — Schedule C, earnings by app + mileage. |
+| **Food Truck & Vendor Tracker** | For food trucks & vendors — Schedule C, profit by event + COGS. |
 
 ---
 
@@ -70,10 +74,14 @@ specific filing with a qualified professional. Designed in-house with the help o
 > tracker and the Freelancer tracker — and keep every income stream tax-ready.
 **Includes:** Online Seller Tracker + Freelancer Tracker + both setup guides.
 
-### "Everything Bundle" — $69 (all six, anchor "$170")
-> All six trackers — rentals, online selling, freelancing, real estate, and photography — both
-> tax forms (Schedule E + C), one purchase.
-**Includes:** all six trackers + all setup guides.
+### "Everything Bundle" — $69 (all ten, anchor "$220")
+> All ten trackers — rentals, online selling, freelancing, real estate, photography, cleaning,
+> beauty, gig driving, and food vending — both tax forms (Schedule E + C), one purchase.
+**Includes:** all ten trackers + all setup guides.
+
+### "Service Pro Bundle" — $39 (anchor "$95") — *optional 4th bundle*
+> Hands-on service business? Bundle any of Cleaning, Beauty, Freelancer, Photographer & Driver.
+**Includes:** pick 3 service trackers + their setup guides.
 
 ---
 

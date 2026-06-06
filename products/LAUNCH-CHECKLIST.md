@@ -22,9 +22,9 @@ already in this repo — `listing-copy.md`, `mockups.md`, `STOREFRONT.md`, `QUIC
       Click the Dashboard + Summary tabs; confirm the totals match the numbers in `README.md`. ← only check I couldn't run for you
 - [ ] (Optional) Export Email 1 from `QUICKSTART-EMAIL.md` as a "Read Me First" PDF to include in the download.
 
-**3. Make 5 product images**
-- [ ] Open Canva (free), 2000×2000 px, use the palette in `mockups.md`.
-- [ ] Build the 5 slides from the product's `mockups.md` (spend the most time on images 1 & 2).
+**3. Product images & video — already made for you ✅**
+- [ ] Grab the 5 ready-made photos from the product's `images/` folder (`01-hero.png` first) and `preview-video.mp4`.
+- [ ] (Optional only) tweak a headline/add your logo in Canva — see `HOW-TO-LIST.md`. Not required.
 
 **4. Create the listing(s)**
 - [ ] Gumroad: new product → upload `.xlsx` + `Setup-Guide.pdf` → paste title/description/short blurb from `listing-copy.md` → set price → enable instant delivery.
@@ -57,6 +57,10 @@ already in this repo — `listing-copy.md`, `mockups.md`, `STOREFRONT.md`, `QUIC
 | Freelancer / 1099 | `freelancer-tracker/` | freelancer bookkeeping spreadsheet | $19 | Schedule C |
 | Real Estate Agent | `realtor-tracker/` | real estate agent spreadsheet | $24 | Schedule C |
 | Photographer | `photographer-tracker/` | photographer bookkeeping spreadsheet | $19 | Schedule C |
+| Cleaning Business | `cleaning-tracker/` | cleaning business spreadsheet | $19 | Schedule C |
+| Hair Stylist & Beauty | `beauty-tracker/` | hair stylist spreadsheet | $19 | Schedule C |
+| Rideshare & Delivery | `driver-tracker/` | rideshare driver spreadsheet | $19 | Schedule C |
+| Food Truck & Vendor | `foodtruck-tracker/` | food truck spreadsheet | $19 | Schedule C |
 
 **Suggested launch order:** start with the **one keyword that looked best in eRank**. If it's a
 toss-up, lead with **Real Estate Agent** (highest price, least price-sensitive buyers) or
