@@ -139,6 +139,74 @@ VARIANTS = {
             (date(2026,5,28), "123 Oak St",     "Income",  "Late fees",                "Late rent fee",                50.00, "Tenant: J. Lee"),
         ],
     },
+    "seller": {
+        "dir": "seller-tracker",
+        "output": "Online-Seller-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C",
+        "entity": "Shop",
+        "entity_lower": "shop",
+        "entity_plural_lower": "shops",
+        "summary_sheet": "Schedule C Summary",
+        "summary_part": "",
+        "income_line_label": "Total income (Line 1)",
+        "expense_total_label": "Total expenses (incl. COGS)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)",
+        "setup_col3": "Platform",
+        "setup_col4": "Start date (optional)",
+        "setup_col4_currency": False,
+        "title": "  Online Seller  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  Etsy / Amazon / Shopify / craft-fair sellers  ·  IRS Schedule C ready  ·  works in Excel & Google Sheets",
+        "income": ["Product sales", "Shipping income collected", "Other income"],
+        "expenses": [
+            ("Advertising & promotion",          "8  Advertising"),
+            ("Car & truck",                      "9  Car & truck"),
+            ("Commissions & marketplace fees",   "10 Commissions & fees"),
+            ("Contract labor",                   "11 Contract labor"),
+            ("Cost of goods sold (materials)",   "4  Cost of goods sold"),
+            ("Insurance (business)",             "15 Insurance"),
+            ("Legal & professional",             "17 Legal & professional"),
+            ("Office expense",                   "18 Office expense"),
+            ("Rent or lease",                    "20 Rent or lease"),
+            ("Repairs & maintenance",            "21 Repairs & maintenance"),
+            ("Shipping & postage",               "27 Other (shipping)"),
+            ("Software & subscriptions",         "27 Other (software)"),
+            ("Supplies & packaging",             "22 Supplies"),
+            ("Taxes & licenses",                 "23 Taxes & licenses"),
+            ("Travel & meals",                   "24 Travel & meals"),
+            ("Utilities (phone/internet)",       "25 Utilities"),
+        ],
+        "placeholders": ["Etsy Shop", "Amazon Store", "Craft Fairs", "", ""],
+        "payee_header": "Customer / payee",
+        "tip_gross": ("Log gross sales as income and the marketplace's cut (Etsy/Amazon/PayPal/Square "
+                      "fees) as a 'Commissions & marketplace fees' expense — don't net them together."),
+        "tip_extra": ("Materials and inventory you buy to make or resell products go under "
+                      "'Cost of goods sold (materials)'; packaging goes under 'Supplies & packaging'."),
+        "noun": "online shop",
+        "audience_line": "If you sell on Etsy, Amazon, Shopify, or at markets,",
+        "log_right": [
+            "<b>Log gross sales as income</b> (<i>Product sales</i>), and the marketplace's cut as an "
+            "expense (<i>Commissions & marketplace fees</i>). Etsy/Amazon/payment fees are real, "
+            "deductible costs — track them separately so your numbers are right.",
+            "<b>Materials and inventory</b> you buy to make or resell go under <i>Cost of goods sold "
+            "(materials)</i>. Boxes, mailers and labels go under <i>Supplies & packaging</i> or "
+            "<i>Shipping & postage</i>.",
+            "<b>Shipping you charge the customer</b> is income (<i>Shipping income collected</i>); "
+            "<b>postage you pay</b> is an expense (<i>Shipping & postage</i>).",
+            "<b>One transaction per row.</b> Run more than one shop? Give each its own name on the "
+            "Setup tab — the summary breaks results out per shop while still totaling your business.",
+        ],
+        "samples": [
+            (date(2026,5,2),  "Etsy Shop",    "Income",  "Product sales",                  "Orders #1001–1010",           980.00, "Etsy"),
+            (date(2026,5,2),  "Etsy Shop",    "Expense", "Commissions & marketplace fees", "Etsy transaction + payment",   88.20, "Etsy"),
+            (date(2026,5,4),  "Etsy Shop",    "Expense", "Cost of goods sold (materials)", "Yarn + beads restock",        145.00, "Supplier"),
+            (date(2026,5,6),  "Etsy Shop",    "Expense", "Shipping & postage",             "May postage labels",           62.40, "USPS"),
+            (date(2026,5,9),  "Amazon Store", "Income",  "Product sales",                  "FBA payout",                 1320.00, "Amazon"),
+            (date(2026,5,9),  "Amazon Store", "Expense", "Commissions & marketplace fees", "Amazon referral + FBA fees",  264.00, "Amazon"),
+            (date(2026,5,15), "Etsy Shop",    "Expense", "Software & subscriptions",       "Canva + email tool",           29.00, "SaaS"),
+            (date(2026,5,20), "Craft Fairs",  "Income",  "Product sales",                  "Spring market booth",         410.00, "Square"),
+        ],
+    },
 }
 
 # ================================================================ BUILDER
@@ -146,6 +214,19 @@ def build(cfg):
     INCOME_CATEGORIES = cfg["income"]
     EXPENSE_CATEGORIES = cfg["expenses"]
     ALL_CATEGORIES = INCOME_CATEGORIES + [c[0] for c in EXPENSE_CATEGORIES]
+
+    # parameterizable labels (defaults keep the Schedule E / "property" products unchanged)
+    FORM      = cfg.get("form", "Schedule E")
+    ENTITY    = cfg.get("entity", "Property")            # singular, capitalized
+    ENT_LOW   = cfg.get("entity_lower", "property")
+    ENT_PLUR  = cfg.get("entity_plural_lower", "properties")
+    SUM_SHEET = cfg.get("summary_sheet", f"{FORM} Summary")
+    SUM_PART  = cfg.get("summary_part", "(Part I)")
+    INC_LABEL = cfg.get("income_line_label", "Total income (Line 3)")
+    EXP_LABEL = cfg.get("expense_total_label", "Total expenses (Line 20)")
+    NET_LABEL = cfg.get("net_label", "NET INCOME / (LOSS)")
+    SET_COL2  = cfg.get("setup_col2", "Address (optional)")
+    SET_COL4  = cfg.get("setup_col4", "Purchase price (optional)")
 
     wb = Workbook()
 
@@ -167,14 +248,14 @@ def build(cfg):
 
     steps = [
         ("How this works", True),
-        ("1.  Open the  Setup  tab and type your property names (up to 5). Everything else "
+        (f"1.  Open the  Setup  tab and type your {ENT_LOW} names (up to 5). Everything else "
          "links to these names automatically.", False),
-        ("2.  Each time money moves, add one row on the  Transactions  tab. Pick the property, "
+        (f"2.  Each time money moves, add one row on the  Transactions  tab. Pick the {ENT_LOW}, "
          "choose Income or Expense, and pick a category from the dropdown. That's it.", False),
-        ("3.  The  Schedule E Summary  tab fills itself in — every expense is mapped to the correct "
-         "IRS Schedule E line, per property. Hand it straight to your accountant or copy the totals "
+        (f"3.  The  {SUM_SHEET}  tab fills itself in — every expense is mapped to the correct "
+         f"IRS {FORM} line, per {ENT_LOW}. Hand it straight to your accountant or copy the totals "
          "into your tax software.", False),
-        ("4.  The  Dashboard  tab updates live: net profit, income vs. expenses, totals by property "
+        (f"4.  The  Dashboard  tab updates live: net profit, income vs. expenses, totals by {ENT_LOW} "
          "and by month.", False),
         ("Tips", True),
         ("•  Categories live on the  Categories  tab. The dropdowns read from there, so you never "
@@ -183,7 +264,7 @@ def build(cfg):
         ("•  " + cfg["tip_extra"], False),
         ("•  Duplicate the file per tax year (e.g. '" + cfg["title"].strip().split("  ")[0] + " 2026').", False),
         ("Disclaimer", True),
-        ("This template is a bookkeeping organizer, not tax, legal, or accounting advice. Schedule E "
+        (f"This template is a bookkeeping organizer, not tax, legal, or accounting advice. {FORM} "
          "line mapping is provided for convenience — confirm your specific situation with a qualified "
          "tax professional.", False),
     ]
@@ -204,17 +285,18 @@ def build(cfg):
     sp.column_dimensions["A"].width = 3; sp.column_dimensions["B"].width = 34
     sp.column_dimensions["C"].width = 26; sp.column_dimensions["D"].width = 26
     sp.column_dimensions["E"].width = 22
-    sp.merge_cells("B2:E2"); sp["B2"] = "Property Setup"
+    sp.merge_cells("B2:E2"); sp["B2"] = f"{ENTITY} Setup"
     sp["B2"].font = hfont(16); sp["B2"].fill = fill(NAVY)
     sp["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
     sp.row_dimensions[2].height = 34
     sp.merge_cells("B3:E3")
-    sp["B3"] = "Type each property's name below. These names feed every dropdown and report."
+    sp["B3"] = f"Type each {ENT_LOW}'s name below. These names feed every dropdown and report."
     sp["B3"].font = bfont(10, GREY); sp["B3"].alignment = left
-    for i, h in enumerate(["Property name", "Address (optional)", cfg["setup_col3"], "Purchase price (optional)"]):
+    for i, h in enumerate([f"{ENTITY} name", SET_COL2, cfg["setup_col3"], SET_COL4]):
         cc = sp.cell(row=5, column=2+i, value=h)
         cc.font = hfont(11); cc.fill = fill(TEAL); cc.alignment = center; cc.border = box
     sp.row_dimensions[5].height = 24
+    col4_cur = cfg.get("setup_col4_currency", True)
     for i in range(MAX_PROPS):
         row = 6 + i
         nm = sp.cell(row=row, column=2, value=cfg["placeholders"][i] or None)
@@ -222,7 +304,7 @@ def build(cfg):
         for col in range(2, 6):
             cc = sp.cell(row=row, column=col); cc.border = box
             cc.fill = fill(LIGHTER if i % 2 == 0 else WHITE)
-            if col == 5: cc.style = "cur"
+            if col == 5 and col4_cur: cc.style = "cur"
         sp.cell(row=row, column=2).alignment = left
         sp.row_dimensions[row].height = 22
 
@@ -231,11 +313,11 @@ def build(cfg):
     cat.column_dimensions["A"].width = 3; cat.column_dimensions["B"].width = 36
     cat.column_dimensions["C"].width = 30; cat.column_dimensions["D"].width = 4
     cat.column_dimensions["E"].width = 30
-    cat.merge_cells("B2:C2"); cat["B2"] = "Categories  &  Schedule E mapping"
+    cat.merge_cells("B2:C2"); cat["B2"] = f"Categories  &  {FORM} mapping"
     cat["B2"].font = hfont(14); cat["B2"].fill = fill(NAVY)
     cat["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
     cat.row_dimensions[2].height = 30
-    cat["B4"] = "Expense category"; cat["C4"] = "Schedule E line"
+    cat["B4"] = "Expense category"; cat["C4"] = f"{FORM} line"
     for cc in ("B4", "C4"):
         cat[cc].font = hfont(11); cat[cc].fill = fill(TEAL); cat[cc].alignment = center; cat[cc].border = box
     for i, (label, line) in enumerate(EXPENSE_CATEGORIES):
@@ -261,7 +343,7 @@ def build(cfg):
     # -------------------------------------------------- 4. TRANSACTIONS
     tx = wb.create_sheet("Transactions"); tx.sheet_view.showGridLines = False
     tx.freeze_panes = "A4"
-    cols = [("A", 13, "Date"), ("B", 22, "Property"), ("C", 13, "Type"),
+    cols = [("A", 13, "Date"), ("B", 22, ENTITY), ("C", 13, "Type"),
             ("D", 30, "Category"), ("E", 34, "Description"), ("F", 15, "Amount"),
             ("G", 16, cfg["payee_header"]), ("H", 14, "Month"), ("I", 26, "Notes")]
     for letter, width, _ in cols:
@@ -315,18 +397,19 @@ def build(cfg):
     dv_type.add(f"C{TX_START}:C{TX_START+TX_ROWS-1}")
     dv_cat.add(f"D{TX_START}:D{TX_START+TX_ROWS-1}")
 
-    # -------------------------------------------------- 5. SCHEDULE E SUMMARY
-    se = wb.create_sheet("Schedule E Summary"); se.sheet_view.showGridLines = False
+    # -------------------------------------------------- 5. TAX SUMMARY
+    se = wb.create_sheet(SUM_SHEET); se.sheet_view.showGridLines = False
     se.column_dimensions["A"].width = 3; se.column_dimensions["B"].width = 34
     for i in range(MAX_PROPS+1):
         se.column_dimensions[get_column_letter(3+i)].width = 16
     totcol = 3 + MAX_PROPS
     se.merge_cells("B2:" + get_column_letter(totcol) + "2")
-    se["B2"] = "Schedule E Summary  (Part I)  —  auto-calculated per property"
+    _part = f"  {SUM_PART}" if SUM_PART else ""
+    se["B2"] = f"{SUM_SHEET}{_part}  —  auto-calculated per {ENT_LOW}"
     se["B2"].font = hfont(14); se["B2"].fill = fill(NAVY)
     se["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
     se.row_dimensions[2].height = 30
-    se["B4"] = "Schedule E line"
+    se["B4"] = f"{FORM} line"
     se["B4"].font = hfont(11); se["B4"].fill = fill(TEAL); se["B4"].alignment = left; se["B4"].border = box
     for i in range(MAX_PROPS):
         cc = se.cell(row=4, column=3+i, value=f"=Setup!$B${6+i}")
@@ -353,7 +436,7 @@ def build(cfg):
         cc.number_format = '$#,##0.00'; cc.border = box; cc.font = bfont(10, bold=True)
         row += 1
     income_last = row - 1
-    se.cell(row=row, column=2, value="Total income (Line 3)").font = bfont(10, GREEN, bold=True)
+    se.cell(row=row, column=2, value=INC_LABEL).font = bfont(10, GREEN, bold=True)
     se.cell(row=row, column=2).border = box; se.cell(row=row, column=2).fill = fill(LIGHTER)
     for i in range(MAX_PROPS+1):
         L = get_column_letter(3+i)
@@ -378,14 +461,14 @@ def build(cfg):
         cc.number_format = '$#,##0.00'; cc.border = box; cc.font = bfont(10, bold=True)
         row += 1
     exp_last = row - 1
-    se.cell(row=row, column=2, value="Total expenses (Line 20)").font = bfont(10, RED, bold=True)
+    se.cell(row=row, column=2, value=EXP_LABEL).font = bfont(10, RED, bold=True)
     se.cell(row=row, column=2).border = box; se.cell(row=row, column=2).fill = fill(LIGHTER)
     for i in range(MAX_PROPS+1):
         L = get_column_letter(3+i)
         cc = se.cell(row=row, column=3+i, value=f"=SUM({L}{exp_first}:{L}{exp_last})")
         cc.number_format = '$#,##0.00'; cc.border = box; cc.font = bfont(10, RED, bold=True); cc.fill = fill(LIGHTER)
     exp_total_row = row; row += 1
-    se.cell(row=row, column=2, value="NET INCOME / (LOSS)").font = hfont(11, WHITE)
+    se.cell(row=row, column=2, value=NET_LABEL).font = hfont(11, WHITE)
     se.cell(row=row, column=2).fill = fill(TEAL); se.cell(row=row, column=2).border = box
     for i in range(MAX_PROPS+1):
         L = get_column_letter(3+i)
@@ -428,13 +511,13 @@ def build(cfg):
     db["F4"].border = box; db["F5"].border = box
 
     r = 8
-    db.cell(row=r, column=2, value="By property").font = hfont(12, TEAL)
+    db.cell(row=r, column=2, value=f"By {ENT_LOW}").font = hfont(12, TEAL)
     db.cell(row=r, column=2).fill = fill(LIGHT)
     db.cell(row=r, column=2).alignment = Alignment(horizontal="left", indent=1)
     for col in range(2, 6):
         db.cell(row=r, column=col).fill = fill(LIGHT); db.cell(row=r, column=col).border = box
     r += 1
-    for i, h in enumerate(["Property", "Income", "Expenses", "Net"]):
+    for i, h in enumerate([ENTITY, "Income", "Expenses", "Net"]):
         cc = db.cell(row=r, column=2+i, value=h)
         cc.font = hfont(11); cc.fill = fill(TEAL); cc.alignment = center; cc.border = box
     r += 1
@@ -450,7 +533,7 @@ def build(cfg):
             cc.fill = fill(LIGHTER if i % 2 == 0 else WHITE)
             if col >= 3: cc.font = bfont(10)
         r += 1
-    db.cell(row=r, column=2, value="All properties").font = bfont(10, NAVY, bold=True)
+    db.cell(row=r, column=2, value=f"All {ENT_PLUR}").font = bfont(10, NAVY, bold=True)
     db.cell(row=r, column=2).fill = fill(LIGHT); db.cell(row=r, column=2).border = box; db.cell(row=r, column=2).alignment = left
     db.cell(row=r, column=3, value=f"=SUM(C{r-MAX_PROPS}:C{r-1})").number_format = '$#,##0.00'
     db.cell(row=r, column=4, value=f"=SUM(D{r-MAX_PROPS}:D{r-1})").number_format = '$#,##0.00'

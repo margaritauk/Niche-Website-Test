@@ -7,12 +7,14 @@ images), high price point with price-insensitive buyers, fully passive delivery.
 
 ## Products
 
-| Folder | Product | Target buyer | Keyword | Price |
-|--------|---------|--------------|---------|-------|
-| `str-tracker/` | Short-Term Rental Tracker | Airbnb/VRBO hosts | "airbnb spreadsheet" | $19 → $29 |
-| `landlord-tracker/` | Rental Property Tracker | Long-term landlords | "rental property spreadsheet" | $19 → $29 |
+| Folder | Product | Tax form | Target buyer | Keyword | Price |
+|--------|---------|----------|--------------|---------|-------|
+| `str-tracker/` | Short-Term Rental Tracker | Schedule E | Airbnb/VRBO hosts | "airbnb spreadsheet" | $19 → $29 |
+| `landlord-tracker/` | Rental Property Tracker | Schedule E | Long-term landlords | "rental property spreadsheet" | $19 → $29 |
+| `seller-tracker/` | Online Seller Bookkeeping Tracker | Schedule C | Etsy/Amazon sellers | "etsy bookkeeping spreadsheet" | $19 → $29 |
 
-**Bundle both for $39** ("Rental Investor Bundle") once they're live.
+**Bundles** (see `STOREFRONT.md`): Rental Investor Bundle $39 · Everything Bundle $49.
+`STOREFRONT.md` also has store-name ideas, the store bio/About, and cross-sell snippets.
 
 Each product folder contains:
 - `*.xlsx` — the product (6-tab automated workbook) → **upload to store**
@@ -47,18 +49,28 @@ Six tabs — **Start Here · Setup · Transactions · Categories · Schedule E S
 Numbers are verified by reimplementing each workbook's SUMIFS against its sample rows:
 - **STR:** income 2205 / expenses 390 / net 1815 (Beach Cottage net 1061.50)
 - **Landlord:** income 3575 / expenses 1395 / net 2180 (123 Oak St net 865)
+- **Seller:** income 2710 / expenses 588.60 / net 2121.40 (Etsy Shop net 655.40)
 
 Open in Excel or Google Sheets and the live formulas reproduce these. *(Note: this environment's
 LibreOffice headless can't recalc, so the math is verified by logic-equivalence — do open the
 file once in Sheets before listing.)*
 
 ## Add another variant (fastest way to grow)
-In `build_tracker.py`, copy a `VARIANTS` entry and change: `dir`, `output`, `title`,
-`subtitle`, `income`, `expenses`, `placeholders`, `setup_col3`, `payee_header`, the tip /
-`log_right` text, and `samples`. Good next candidates (same engine):
-- **Single-trade bookkeeping** (cleaner, photographer, salon) — swap categories, Schedule C
+In `build_tracker.py`, copy a `VARIANTS` entry and change the fields. The engine is fully
+parameterized — even the **tax form and entity labels** are configurable, so you are not
+limited to Schedule E. Per-variant keys:
+- Core: `dir`, `output`, `title`, `subtitle`, `income`, `expenses`, `placeholders`,
+  `setup_col3`, `payee_header`, tip / `log_right` text, `samples`
+- Tax-form/labeling (optional, default = Schedule E / "property"): `form`, `entity`,
+  `entity_lower`, `entity_plural_lower`, `summary_sheet`, `summary_part`,
+  `income_line_label`, `expense_total_label`, `net_label`, `setup_col2`, `setup_col4`,
+  `setup_col4_currency`
+
+The `seller` variant (Schedule C, entity = "Shop") is the worked example of using those
+optional keys. Good next candidates (same engine):
+- **Single-trade bookkeeping** (cleaner, photographer, salon, food truck) — Schedule C, swap categories
 - **Single-property simple** version (set `MAX_PROPS = 1`)
-- **Etsy / online-seller bookkeeping** — sales, fees, COGS, sales tax
+- **Freelancer / 1099 contractor** tracker — Schedule C
 
 ## Launch checklist (per product)
 1. [ ] Validate the keyword in eRank/Everbee free tier

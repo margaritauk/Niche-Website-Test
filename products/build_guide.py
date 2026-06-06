@@ -40,6 +40,10 @@ def bullets(items):
 def build_guide(cfg):
     name = cfg["title"].strip().split("  ")[0]            # e.g. "Short-Term Rental"
     noun = cfg["noun"]
+    form = cfg.get("form", "Schedule E")
+    ent = cfg.get("entity_lower", "property")
+    ent_plur = cfg.get("entity_plural_lower", "properties")
+    sum_sheet = cfg.get("summary_sheet", f"{form} Summary")
     story = []
     story.append(Paragraph(name + " Tracker", H1))
     story.append(Paragraph("Setup &amp; User Guide &nbsp;·&nbsp; " + cfg["subtitle"].strip(), SUB))
@@ -49,18 +53,18 @@ def build_guide(cfg):
     story.append(Paragraph(
         f"A single, formula-driven spreadsheet that does your {noun} bookkeeping for you. "
         "Log each transaction once, and the workbook automatically organizes everything into a "
-        "tax-ready <b>IRS Schedule E</b> summary and a live profit dashboard — per property. "
+        f"tax-ready <b>IRS {form}</b> summary and a live profit dashboard — per {ent}. "
         "No subscriptions, no logins, no monthly fees. It's yours forever.", BODY))
 
     story.append(Paragraph("The 6 tabs", H2))
     tab_rows = [
         ["Tab", "What it's for"],
         ["Start Here", "A one-page overview and tips. Read this first."],
-        ["Setup", "Type your property names (up to 5). Everything else links to them automatically."],
+        ["Setup", f"Type your {ent} names (up to 5). Everything else links to them automatically."],
         ["Transactions", "Your logbook. Add one row per income or expense. The only tab you touch daily."],
-        ["Categories", "Reference list of every category and its matching Schedule E line. Feeds the dropdowns."],
-        ["Schedule E Summary", "Fills itself in. Every expense mapped to the correct Schedule E line, per property."],
-        ["Dashboard", "Live totals: net profit, income vs. expenses, by property and by month."],
+        ["Categories", f"Reference list of every category and its matching {form} line. Feeds the dropdowns."],
+        [sum_sheet, f"Fills itself in. Every expense mapped to the correct {form} line, per {ent}."],
+        ["Dashboard", f"Live totals: net profit, income vs. expenses, by {ent} and by month."],
     ]
     t = Table(tab_rows, colWidths=[1.5*inch, 4.6*inch])
     t.setStyle(TableStyle([
@@ -76,15 +80,15 @@ def build_guide(cfg):
 
     story.append(Paragraph("Get started in 4 steps", H2))
     story.append(bullets([
-        "<b>1. Name your properties.</b> Open the <b>Setup</b> tab and type each property name in column B "
+        f"<b>1. Name your {ent_plur}.</b> Open the <b>Setup</b> tab and type each {ent} name in column B "
         "(replace the sample names). You can have up to 5.",
         "<b>2. Delete the sample data.</b> The <b>Transactions</b> tab has 8 example rows so you can see how "
         "it works. Once you understand it, delete those rows (select rows 4–11, right-click, Delete) before "
         "adding your own.",
-        "<b>3. Log a transaction.</b> On <b>Transactions</b>, fill one row: pick the Date, choose the "
-        "Property and Type (Income / Expense) from the dropdowns, pick a Category, enter the Amount. The "
-        "Month column fills in by itself.",
-        "<b>4. Read your reports.</b> Open <b>Schedule E Summary</b> and <b>Dashboard</b> any time — they "
+        f"<b>3. Log a transaction.</b> On <b>Transactions</b>, fill one row: pick the Date, choose the "
+        f"{ent.capitalize()} and Type (Income / Expense) from the dropdowns, pick a Category, enter the "
+        "Amount. The Month column fills in by itself.",
+        f"<b>4. Read your reports.</b> Open <b>{sum_sheet}</b> and <b>Dashboard</b> any time — they "
         "update the instant you add a row. Nothing to refresh.",
     ]))
 
@@ -107,7 +111,7 @@ def build_guide(cfg):
     story.append(HRFlowable(width="100%", color=LIGHT, thickness=2, spaceAfter=8))
     story.append(Paragraph(
         "<b>Disclaimer.</b> This template is a bookkeeping organizer, not tax, legal, or accounting advice. "
-        "The Schedule E line mapping is provided for convenience only. Tax rules vary by situation and "
+        f"The {form} line mapping is provided for convenience only. Tax rules vary by situation and "
         "jurisdiction — always confirm your specific filing with a qualified tax professional before "
         "submitting. Made with spreadsheet software; design and formulas by the seller.", SMALL))
 
