@@ -52,6 +52,7 @@ specific filing with a qualified professional. Designed in-house with the help o
 | **Short-Term Rental Tracker** | For Airbnb & VRBO hosts — Schedule E, tracks up to 5 properties. |
 | **Rental Property Tracker** | For long-term landlords — Schedule E, handles deposits & mortgage interest. |
 | **Online Seller Bookkeeping Tracker** | For Etsy & Amazon sellers — Schedule C, separates sales from fees. |
+| **Freelancer & Self-Employed Tracker** | For freelancers & 1099 contractors — Schedule C, profit by client. |
 
 ---
 
@@ -62,13 +63,14 @@ specific filing with a qualified professional. Designed in-house with the help o
 > system for your whole portfolio — nightly stays and yearly leases, side by side.
 **Includes:** Short-Term Rental Tracker + Rental Property Tracker + both setup guides.
 
-### "Side-Hustle Starter Bundle" — $39 (anchor "$58")
-> Renting out a place *and* selling online? Get the Online Seller (Schedule C) tracker plus
-> a rental tracker of your choice and keep both sides of your hustle tax-ready.
-**Includes:** Online Seller Tracker + one rental tracker + both setup guides.
+### "Self-Employed Bundle" — $39 (anchor "$58")
+> Sell online *and* freelance on the side? Get both Schedule C trackers — the Online Seller
+> tracker and the Freelancer tracker — and keep every income stream tax-ready.
+**Includes:** Online Seller Tracker + Freelancer Tracker + both setup guides.
 
-### "Everything Bundle" — $49 (all three, anchor "$87")
-> All three trackers — every business, every tax form, one purchase.
+### "Everything Bundle" — $59 (all four, anchor "$116")
+> All four trackers — every business, both tax forms (Schedule E + C), one purchase.
+**Includes:** all four trackers + all setup guides.
 
 ---
 
@@ -76,12 +78,13 @@ specific filing with a qualified professional. Designed in-house with the help o
 
 - On the **STR** listing: *"Also rent long-term? Grab the Rental Property Tracker, or save with the Rental Investor Bundle."*
 - On the **Landlord** listing: *"Also host on Airbnb? Grab the Short-Term Rental Tracker, or save with the Rental Investor Bundle."*
-- On the **Seller** listing: *"Also a landlord or host? Check out the rental trackers and bundles."*
+- On the **Seller** listing: *"Also freelance on the side? Pair it with the Freelancer Tracker, or save with the Self-Employed Bundle."*
+- On the **Freelancer** listing: *"Also sell products online? Pair it with the Online Seller Tracker, or save with the Self-Employed Bundle."*
 
 ---
 
 ## LAUNCH SEQUENCE (suggested)
-1. List all three individually first (own keywords, own traffic).
+1. List all four individually first (own keywords, own traffic).
 2. Once each has its product images, create the three bundle listings (they reuse the same files).
 3. Add the cross-sell snippets to every description.
 4. After your first reviews, raise individual prices from $19 → $24–29 and keep the bundles as the value play.

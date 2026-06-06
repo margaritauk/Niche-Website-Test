@@ -207,6 +207,75 @@ VARIANTS = {
             (date(2026,5,20), "Craft Fairs",  "Income",  "Product sales",                  "Spring market booth",         410.00, "Square"),
         ],
     },
+    "freelancer": {
+        "dir": "freelancer-tracker",
+        "output": "Freelancer-Self-Employed-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C",
+        "entity": "Client",
+        "entity_lower": "client",
+        "entity_plural_lower": "clients",
+        "summary_sheet": "Schedule C Summary",
+        "summary_part": "",
+        "income_line_label": "Total income (Line 1)",
+        "expense_total_label": "Total expenses (Line 28)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)",
+        "setup_col3": "Type (client / overhead)",
+        "setup_col4": "Start date (optional)",
+        "setup_col4_currency": False,
+        "title": "  Freelancer & Self-Employed  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  Freelancers · 1099 contractors · solo service businesses  ·  IRS Schedule C ready  ·  works in Excel & Google Sheets",
+        "income": ["Client payment / invoice", "Other income"],
+        "expenses": [
+            ("Advertising & marketing",          "8  Advertising"),
+            ("Car & truck",                      "9  Car & truck"),
+            ("Platform & payment fees",          "10 Commissions & fees"),
+            ("Contract labor / subcontractors",  "11 Contract labor"),
+            ("Insurance (business)",             "15 Insurance"),
+            ("Legal & professional",             "17 Legal & professional"),
+            ("Office expense",                   "18 Office expense"),
+            ("Rent or lease",                    "20 Rent or lease"),
+            ("Repairs & maintenance",            "21 Repairs & maintenance"),
+            ("Supplies",                         "22 Supplies"),
+            ("Taxes & licenses",                 "23 Taxes & licenses"),
+            ("Travel & meals",                   "24 Travel & meals"),
+            ("Software & subscriptions",         "27 Other (software)"),
+            ("Education & professional dev",     "27 Other (education)"),
+            ("Utilities (phone/internet)",       "25 Utilities"),
+        ],
+        "placeholders": ["(General / overhead)", "Client: Acme Co", "Client: Beta LLC", "", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log each client payment as 'Client payment / invoice' and tag it to that client "
+                      "on the Setup tab — the dashboard then shows you revenue per client."),
+        "tip_extra": ("Tag client-specific costs to that client; put general overhead (software, phone, "
+                      "insurance) under '(General / overhead)' so it isn't charged against one client."),
+        "noun": "freelance / self-employed",
+        "audience_line": "If you freelance, contract, or run a solo service business,",
+        "log_right": [
+            "<b>Log every client payment as income</b> (<i>Client payment / invoice</i>) and tag it to "
+            "that client on the Setup tab — the dashboard then shows revenue per client, your most useful "
+            "number.",
+            "<b>Tag client-specific costs to that client</b> (e.g. a subcontractor hired for one project). "
+            "Put general overhead — software, phone, insurance — under <b>(General / overhead)</b> so it "
+            "isn't double-counted against a single client.",
+            "<b>Set aside for quarterly taxes.</b> This tracker shows your <i>profit</i>; as a 1099 / "
+            "self-employed worker you generally owe estimated tax on it every quarter. A common rule of "
+            "thumb is to park ~25–30% of profit aside — ask your tax pro for your exact number.",
+            "<b>Mileage and the home-office deduction are figured separately</b> by the IRS (standard "
+            "mileage rate / Form 8829). Keep a mileage log and your home-office details — this sheet "
+            "covers your direct business expenses.",
+        ],
+        "samples": [
+            (date(2026,5,3),  "Client: Acme Co",      "Income",  "Client payment / invoice",        "Invoice #210 — design work",   2200.00, "Acme Co"),
+            (date(2026,5,6),  "(General / overhead)", "Expense", "Software & subscriptions",        "Adobe + Figma",                  74.00, "Adobe/Figma"),
+            (date(2026,5,10), "Client: Beta LLC",     "Income",  "Client payment / invoice",        "Invoice #211 — retainer",      1500.00, "Beta LLC"),
+            (date(2026,5,12), "(General / overhead)", "Expense", "Platform & payment fees",         "Stripe processing fees",         55.50, "Stripe"),
+            (date(2026,5,14), "Client: Acme Co",      "Expense", "Contract labor / subcontractors", "Freelance copywriter",          400.00, "Subcontractor"),
+            (date(2026,5,18), "(General / overhead)", "Expense", "Utilities (phone/internet)",      "Phone + internet (biz %)",       60.00, "Telecom"),
+            (date(2026,5,22), "(General / overhead)", "Expense", "Travel & meals",                  "Client lunch + parking",         48.00, "Cafe"),
+            (date(2026,5,28), "Client: Beta LLC",     "Income",  "Client payment / invoice",        "Invoice #214 — extra hours",    650.00, "Beta LLC"),
+        ],
+    },
 }
 
 # ================================================================ BUILDER
