@@ -97,6 +97,9 @@ No pressure at all. Thanks for being a customer!
 **Real Estate Agent Tracker** (Schedule C)
 > 2. On the **Setup** tab, add your active deals plus the "(General / business)" bucket. Then on **Transactions**, log commissions and expenses — tag each to a deal (or to general business), choose Income/Expense, pick a category. Remember: log your gross commission as income and your brokerage split as a separate expense, and track every business mile.
 
+**Photographer Tracker** (Schedule C)
+> 2. On the **Setup** tab, add your shoots/clients plus the "(General / business)" bucket. Then on **Transactions**, log session fees, print sales and expenses — tag each to a shoot (or to general business), choose Income/Expense, pick a category. Remember: print sales are income and the lab cost is COGS, and big-ticket gear is usually depreciated rather than expensed all at once.
+
 ---
 
 ## SUBJECT-LINE SWAP-INS (per product, for Email 1)
@@ -105,3 +108,4 @@ No pressure at all. Thanks for being a customer!
 - Seller: `Your Seller Bookkeeping Tracker is ready — start here (5 min)`
 - Freelancer: `Your Freelancer Bookkeeping Tracker is ready — start here (5 min)`
 - Realtor: `Your Real Estate Agent Tracker is ready — start here (5 min)`
+- Photographer: `Your Photographer Bookkeeping Tracker is ready — start here (5 min)`

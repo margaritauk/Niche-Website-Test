@@ -54,6 +54,7 @@ specific filing with a qualified professional. Designed in-house with the help o
 | **Online Seller Bookkeeping Tracker** | For Etsy & Amazon sellers — Schedule C, separates sales from fees. |
 | **Freelancer & Self-Employed Tracker** | For freelancers & 1099 contractors — Schedule C, profit by client. |
 | **Real Estate Agent Tracker** | For realtors & brokers — Schedule C, gross commission vs. split, by deal. |
+| **Photographer Tracker** | For photographers — Schedule C, profit by shoot, gear & prints (COGS). |
 
 ---
 
@@ -69,10 +70,10 @@ specific filing with a qualified professional. Designed in-house with the help o
 > tracker and the Freelancer tracker — and keep every income stream tax-ready.
 **Includes:** Online Seller Tracker + Freelancer Tracker + both setup guides.
 
-### "Everything Bundle" — $69 (all five, anchor "$150")
-> All five trackers — rentals, online selling, freelancing, and real estate — both tax forms
-> (Schedule E + C), one purchase.
-**Includes:** all five trackers + all setup guides.
+### "Everything Bundle" — $69 (all six, anchor "$170")
+> All six trackers — rentals, online selling, freelancing, real estate, and photography — both
+> tax forms (Schedule E + C), one purchase.
+**Includes:** all six trackers + all setup guides.
 
 ---
 
@@ -83,6 +84,7 @@ specific filing with a qualified professional. Designed in-house with the help o
 - On the **Seller** listing: *"Also freelance on the side? Pair it with the Freelancer Tracker, or save with the Self-Employed Bundle."*
 - On the **Freelancer** listing: *"Also sell products online? Pair it with the Online Seller Tracker, or save with the Self-Employed Bundle."*
 - On the **Realtor** listing: *"Investing in rentals too? Check out the Short-Term Rental and Rental Property trackers."*
+- On the **Photographer** listing: *"Freelance in other ways too? The Freelancer & Self-Employed Tracker pairs nicely."*
 
 ---
 

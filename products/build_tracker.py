@@ -345,6 +345,76 @@ VARIANTS = {
             (date(2026,5,20), "456 Oak Ave (closing)",  "Expense", "Broker split / desk fees",  "30% brokerage split",       2250.00, "Brokerage"),
         ],
     },
+    "photographer": {
+        "dir": "photographer-tracker",
+        "output": "Photographer-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C",
+        "entity": "Shoot / client",
+        "entity_lower": "shoot",
+        "entity_plural_lower": "shoots",
+        "summary_sheet": "Schedule C Summary",
+        "summary_part": "",
+        "income_line_label": "Total income (Line 1)",
+        "expense_total_label": "Total expenses (incl. COGS)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)",
+        "setup_col3": "Type (shoot / business)",
+        "setup_col4": "Shoot date (optional)",
+        "setup_col4_currency": False,
+        "title": "  Photographer  —  Bookkeeping & Tax Tracker",
+        "subtitle": "  Photographers & videographers  ·  per-shoot profit + IRS Schedule C  ·  works in Excel & Google Sheets",
+        "income": ["Session / shoot fee", "Print & album sales", "Other income"],
+        "expenses": [
+            ("Advertising & marketing",            "8  Advertising"),
+            ("Car & truck / travel to shoots",     "9  Car & truck"),
+            ("Platform & payment fees",            "10 Commissions & fees"),
+            ("Second shooter / assistant",         "11 Contract labor"),
+            ("Camera gear & equipment",            "13 Depreciation"),
+            ("Insurance (gear & liability)",       "15 Insurance"),
+            ("Legal & professional",               "17 Legal & professional"),
+            ("Studio rent or lease",               "20 Rent or lease"),
+            ("Gear repairs & maintenance",         "21 Repairs & maintenance"),
+            ("Props, backdrops & supplies",        "22 Supplies"),
+            ("Dues & licenses",                    "23 Taxes & licenses"),
+            ("Travel & meals",                     "24 Travel & meals"),
+            ("Editing software & subscriptions",   "27 Other (software)"),
+            ("Prints, albums & packaging (COGS)",  "4  Cost of goods sold"),
+            ("Education & workshops",              "27 Other (education)"),
+            ("Utilities (phone/internet)",         "25 Utilities"),
+        ],
+        "placeholders": ["(General / business)", "Smith Wedding", "Jones Portraits", "", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log each session/shoot fee as income and tag it to that shoot. Print and album "
+                      "sales are income too; the materials cost goes under 'Prints, albums & packaging "
+                      "(COGS)'."),
+        "tip_extra": ("Big-ticket camera gear is usually depreciated (or Section 179'd), not expensed all "
+                      "at once — log it under 'Camera gear & equipment' and confirm the treatment with "
+                      "your tax pro."),
+        "noun": "photography business",
+        "audience_line": "If you run a photography or video business,",
+        "log_right": [
+            "<b>Log each session or shoot fee as income</b> (<i>Session / shoot fee</i>) and tag it to "
+            "that shoot on the Setup tab — the dashboard then shows profit per shoot, your most useful "
+            "number.",
+            "<b>Print and album sales are income</b> (<i>Print & album sales</i>); the cost of the "
+            "prints/albums you buy to fulfill them goes under <i>Prints, albums & packaging (COGS)</i>.",
+            "<b>Big-ticket gear (cameras, lenses) is usually depreciated</b> or expensed under Section "
+            "179, not written off all at once — log it under <i>Camera gear & equipment</i> and confirm "
+            "the treatment with your tax pro.",
+            "<b>Tag shoot-specific costs to the shoot</b> (second shooter, travel, props) and general "
+            "costs — marketing, software, studio rent — to <b>(General / business)</b>.",
+        ],
+        "samples": [
+            (date(2026,5,3),  "Smith Wedding",        "Income",  "Session / shoot fee",              "Wedding package — final pmt", 2800.00, "Smith"),
+            (date(2026,5,3),  "Smith Wedding",        "Expense", "Second shooter / assistant",       "Second shooter — 8 hrs",       400.00, "Assistant"),
+            (date(2026,5,5),  "(General / business)", "Expense", "Editing software & subscriptions", "Lightroom + Pic-Time",          45.00, "Adobe"),
+            (date(2026,5,9),  "Jones Portraits",      "Income",  "Session / shoot fee",              "Family portrait session",      450.00, "Jones"),
+            (date(2026,5,11), "Jones Portraits",      "Income",  "Print & album sales",              "Print order",                  220.00, "Jones"),
+            (date(2026,5,11), "Jones Portraits",      "Expense", "Prints, albums & packaging (COGS)","Lab print order",               78.00, "Print Lab"),
+            (date(2026,5,15), "(General / business)", "Expense", "Camera gear & equipment",          "New 50mm lens",                430.00, "Camera Store"),
+            (date(2026,5,20), "(General / business)", "Expense", "Advertising & marketing",          "Instagram ads",                 90.00, "Meta"),
+        ],
+    },
 }
 
 # ================================================================ BUILDER
