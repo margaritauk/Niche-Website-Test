@@ -276,6 +276,75 @@ VARIANTS = {
             (date(2026,5,28), "Client: Beta LLC",     "Income",  "Client payment / invoice",        "Invoice #214 — extra hours",    650.00, "Beta LLC"),
         ],
     },
+    "realtor": {
+        "dir": "realtor-tracker",
+        "output": "Real-Estate-Agent-Bookkeeping-Tracker.xlsx",
+        "form": "Schedule C",
+        "entity": "Deal / source",
+        "entity_lower": "deal",
+        "entity_plural_lower": "deals",
+        "summary_sheet": "Schedule C Summary",
+        "summary_part": "",
+        "income_line_label": "Total income (Line 1)",
+        "expense_total_label": "Total expenses (Line 28)",
+        "net_label": "NET PROFIT / (LOSS)",
+        "setup_col2": "Notes (optional)",
+        "setup_col3": "Type (deal / business)",
+        "setup_col4": "Close date (optional)",
+        "setup_col4_currency": False,
+        "title": "  Real Estate Agent  —  Bookkeeping, Commission & Tax Tracker",
+        "subtitle": "  Realtors & brokers  ·  commission, mileage & expense tracking  ·  IRS Schedule C ready  ·  Excel & Google Sheets",
+        "income": ["Commission income (gross)", "Referral fees received", "Other income"],
+        "expenses": [
+            ("Advertising & marketing",          "8  Advertising"),
+            ("Car & truck / mileage",            "9  Car & truck"),
+            ("Broker split / desk fees",         "10 Commissions & fees"),
+            ("Contract labor (ISA, staging)",    "11 Contract labor"),
+            ("Insurance (E&O)",                  "15 Insurance"),
+            ("Legal & professional",             "17 Legal & professional"),
+            ("Office expense",                   "18 Office expense"),
+            ("Rent or lease (desk/office)",      "20 Rent or lease"),
+            ("Repairs & maintenance",            "21 Repairs & maintenance"),
+            ("Supplies (signs, lockboxes)",      "22 Supplies"),
+            ("Dues & licenses (MLS, NAR)",       "23 Taxes & licenses"),
+            ("Travel & meals",                   "24 Travel & meals"),
+            ("Software & subscriptions (CRM)",   "27 Other (software)"),
+            ("Client & closing gifts",           "27 Other (gifts)"),
+            ("Continuing education",             "27 Other (education)"),
+            ("Utilities (phone/internet)",       "25 Utilities"),
+        ],
+        "placeholders": ["(General / business)", "123 Main St (closing)", "456 Oak Ave (closing)", "", ""],
+        "payee_header": "Paid to / from",
+        "tip_gross": ("Log your GROSS commission as income and your brokerage split / desk fees as a "
+                      "'Broker split / desk fees' expense — what's left is your true net."),
+        "tip_extra": ("Track every business mile — mileage is one of an agent's biggest deductions. Tag "
+                      "deal-specific costs to the deal; marketing & dues go under '(General / business)'."),
+        "noun": "real estate agent",
+        "audience_line": "If you're a real estate agent or broker,",
+        "log_right": [
+            "<b>Log your GROSS commission as income</b> (<i>Commission income (gross)</i>) and your "
+            "<b>brokerage split / desk fees as an expense</b> (<i>Broker split / desk fees</i>). Your net "
+            "commission is what's left — and that's closer to what you're actually taxed on.",
+            "<b>Track every business mile.</b> Mileage is one of the biggest deductions agents miss. Log "
+            "car costs under <i>Car & truck / mileage</i>, or keep a mileage log and apply the IRS "
+            "standard mileage rate — ask your tax pro which is better for you.",
+            "<b>Tag deal-specific costs to the deal</b> (staging, photography, a closing gift) and general "
+            "costs — marketing, MLS, association dues, CRM — to <b>(General / business)</b>.",
+            "<b>Closing & client gifts are deductible but capped</b> by the IRS (commonly $25 per "
+            "recipient per year). Log them under <i>Client & closing gifts</i> and confirm the limit with "
+            "your tax pro.",
+        ],
+        "samples": [
+            (date(2026,5,4),  "123 Main St (closing)",  "Income",  "Commission income (gross)", "Closing — 123 Main St",     9000.00, "Brokerage"),
+            (date(2026,5,4),  "123 Main St (closing)",  "Expense", "Broker split / desk fees",  "30% brokerage split",       2700.00, "Brokerage"),
+            (date(2026,5,4),  "123 Main St (closing)",  "Expense", "Client & closing gifts",    "Closing gift",                25.00, "Gift Shop"),
+            (date(2026,5,8),  "(General / business)",   "Expense", "Advertising & marketing",   "Facebook + IG ads",          320.00, "Meta"),
+            (date(2026,5,12), "(General / business)",   "Expense", "Software & subscriptions (CRM)", "CRM + MLS software",     95.00, "SaaS"),
+            (date(2026,5,15), "(General / business)",   "Expense", "Dues & licenses (MLS, NAR)", "MLS dues + association",     140.00, "Association"),
+            (date(2026,5,20), "456 Oak Ave (closing)",  "Income",  "Commission income (gross)", "Closing — 456 Oak Ave",     7500.00, "Brokerage"),
+            (date(2026,5,20), "456 Oak Ave (closing)",  "Expense", "Broker split / desk fees",  "30% brokerage split",       2250.00, "Brokerage"),
+        ],
+    },
 }
 
 # ================================================================ BUILDER

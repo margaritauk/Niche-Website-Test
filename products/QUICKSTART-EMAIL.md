@@ -94,6 +94,9 @@ No pressure at all. Thanks for being a customer!
 **Freelancer & Self-Employed Tracker** (Schedule C)
 > 2. On the **Setup** tab, add your clients plus the "(General / overhead)" bucket. Then on **Transactions**, log invoices and expenses — tag each to a client (or to overhead), choose Income/Expense, pick a category. Tip: the Dashboard shows profit per client, and a good rule of thumb is to set aside ~25–30% of profit for quarterly taxes.
 
+**Real Estate Agent Tracker** (Schedule C)
+> 2. On the **Setup** tab, add your active deals plus the "(General / business)" bucket. Then on **Transactions**, log commissions and expenses — tag each to a deal (or to general business), choose Income/Expense, pick a category. Remember: log your gross commission as income and your brokerage split as a separate expense, and track every business mile.
+
 ---
 
 ## SUBJECT-LINE SWAP-INS (per product, for Email 1)
@@ -101,3 +104,4 @@ No pressure at all. Thanks for being a customer!
 - Landlord: `Your Rental Property Tracker is ready — start here (5 min)`
 - Seller: `Your Seller Bookkeeping Tracker is ready — start here (5 min)`
 - Freelancer: `Your Freelancer Bookkeeping Tracker is ready — start here (5 min)`
+- Realtor: `Your Real Estate Agent Tracker is ready — start here (5 min)`

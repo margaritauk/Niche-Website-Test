@@ -13,8 +13,9 @@ images), high price point with price-insensitive buyers, fully passive delivery.
 | `landlord-tracker/` | Rental Property Tracker | Schedule E | Long-term landlords | "rental property spreadsheet" | $19 → $29 |
 | `seller-tracker/` | Online Seller Bookkeeping Tracker | Schedule C | Etsy/Amazon sellers | "etsy bookkeeping spreadsheet" | $19 → $29 |
 | `freelancer-tracker/` | Freelancer & Self-Employed Tracker | Schedule C | Freelancers / 1099 | "freelancer bookkeeping spreadsheet" | $19 → $29 |
+| `realtor-tracker/` | Real Estate Agent Tracker | Schedule C | Realtors / brokers | "real estate agent spreadsheet" | $24 → $39 |
 
-**Bundles** (see `STOREFRONT.md`): Rental Investor $39 · Self-Employed $39 · Everything $59.
+**Bundles** (see `STOREFRONT.md`): Rental Investor $39 · Self-Employed $39 · Everything $69.
 `STOREFRONT.md` has store-name ideas, the store bio/About, and cross-sell snippets.
 `QUICKSTART-EMAIL.md` has the reusable post-purchase quick-start + review email (drives reviews,
 which drive early ranking).
@@ -54,6 +55,7 @@ Numbers are verified by reimplementing each workbook's SUMIFS against its sample
 - **Landlord:** income 3575 / expenses 1395 / net 2180 (123 Oak St net 865)
 - **Seller:** income 2710 / expenses 588.60 / net 2121.40 (Etsy Shop net 655.40)
 - **Freelancer:** income 4350 / expenses 637.50 / net 3712.50 (Acme Co net 1800, overhead −237.50)
+- **Realtor:** income 16500 / expenses 5530 / net 10970 (123 Main St net 6275, overhead −555)
 
 Open in Excel or Google Sheets and the live formulas reproduce these. *(Note: this environment's
 LibreOffice headless can't recalc, so the math is verified by logic-equivalence — do open the
