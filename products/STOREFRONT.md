@@ -5,14 +5,16 @@ Pick a store name first (suggestions below), then paste.
 
 ---
 
-## STORE NAME IDEAS
-- **LedgerLite** — "bookkeeping, lightened up"
-- **PlainSheet** — "plain-English spreadsheets for real businesses"
-- **TaxReadyTemplates**
-- **TidyBooks Co.**
-- **The Sheet Shop**
+## STORE NAME — chosen: **LedgerLite**
+The shop is built as **LedgerLite** — *"Bookkeeping that does your taxes for you."* Full brand
+identity, logo, banners, icon, Gumroad cover and a bundle hero are in **`shop/assets/`**; all
+shop text (title, announcement, About, policies, buyer message, FAQ) is in **`shop/shop-copy.md`**;
+the brand guide (palette, fonts, voice, rebrand-in-one-step) is in **`shop/BRAND.md`**.
 
-Pick one, keep it consistent across Gumroad, Etsy, and your file names.
+> Confirm "LedgerLite" is free on Etsy + Gumroad (and ideally a domain) before finalizing. To
+> switch names, edit the variables atop `build_brand.py` and re-run — every asset regenerates.
+
+**Alternate names (same vibe):** Ledgerly · TidyLedger · PlainSheet · TidyBooks Co. · ProfitSheet · SheetSet
 
 ---
 
